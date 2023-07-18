@@ -39,9 +39,6 @@ export default function LoginScreen({navigation}) {
       <Text style={styles.headerText}>
       You are logged in!
       </Text>}
-      <Pressable onPress={() => navigation.popToTop()}>
-        <Text>Home</Text>
-      </Pressable>
     </ScrollView>
   );
 }

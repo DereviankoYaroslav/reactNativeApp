@@ -91,9 +91,6 @@ const MenuItems = ({navigation}) => {
       renderSectionHeader={renderSectionHeader}
       keyExtractor={(item, index) => item+index}
     />  : null}
-      <Pressable onPress={() => navigation.navigate('Login')}>
-        <Text style={menuStyles.button}>Login Screen</Text>
-      </Pressable>
     </View>
   );
 };
