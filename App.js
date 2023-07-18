@@ -2,6 +2,7 @@ import * as React from 'react';
 import { View, Text, StyleSheet, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -10,6 +11,8 @@ import MenuItems from './components/MenuItems'
 import LoginScreen from './components/LoginScreen';
 
 const Stack = createNativeStackNavigator();
+
+const Tab = createBottomTabNavigator();
 
 function LogoTitle(){
   return (
@@ -27,7 +30,7 @@ export default function App() {
   return (
     <>
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='Welcome'
+      <Tab.Navigator initialRouteName='Welcome'
       screenOptions={{ headerStyle: 
       { backgroundColor: '#333333' }, 
       headerTintColor: '#fff',
@@ -35,10 +38,10 @@ export default function App() {
         fontWeight: 'bold',
       },
       headerTitleAlign: 'center'}}>
-        <Stack.Screen options={{title: "Home", headerTitle: (props) => <LogoTitle {...props} />}} name='Welcome' component={WelcomeScreen}></Stack.Screen>
-        <Stack.Screen name='Menu' component={MenuItems}></Stack.Screen>
-        <Stack.Screen name='Login' component={LoginScreen}></Stack.Screen>
-      </Stack.Navigator>
+        <Tab.Screen options={{title: "Home", headerTitle: (props) => <LogoTitle {...props} />}} name='Welcome' component={WelcomeScreen}></Tab.Screen>
+        <Tab.Screen name='Menu' component={MenuItems}></Tab.Screen>
+        <Tab.Screen name='Login' component={LoginScreen}></Tab.Screen>
+      </Tab.Navigator>
     </NavigationContainer>
     </>
   );
