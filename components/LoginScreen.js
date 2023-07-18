@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { ScrollView, Text, StyleSheet, TextInput, Alert, Pressable, View} from 'react-native';
 
-export default function LoginScreen() {
+export default function LoginScreen({navigation}) {
 
     const [email, onChangeEmail] = useState('');
     const [password, onChangePassword] = useState('');
@@ -39,6 +39,9 @@ export default function LoginScreen() {
       <Text style={styles.headerText}>
       You are logged in!
       </Text>}
+      <Pressable onPress={() => navigation.popToTop()}>
+        <Text>Home</Text>
+      </Pressable>
     </ScrollView>
   );
 }
@@ -50,14 +53,14 @@ const styles = StyleSheet.create({
   headerText: {
     padding: 40,
     fontSize: 30,
-    color: '#EDEFEE',
+    color: '#000000',
     textAlign: 'center',
   },
   regularText: {
     fontSize: 24,
     padding: 20,
     marginVertical: 8,
-    color: '#EDEFEE',
+    color: '#000000',
     textAlign: 'center',
   },
   inputBox: {

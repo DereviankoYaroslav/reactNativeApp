@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function Footer() {
   return (
@@ -13,7 +14,7 @@ export default function Footer() {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#EE9972',
-    marginBottom: 0,
+    marginBottom: 20,
   },
   footerText: {
     fontSize: 18,

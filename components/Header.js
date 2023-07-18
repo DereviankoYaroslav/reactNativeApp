@@ -1,4 +1,5 @@
-import { StyleSheet, Text, View } from 'react-native';
+import * as React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 export default function Header() {
   return (
@@ -10,6 +11,7 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 0.16,
     backgroundColor: '#EE9972',
   },
   headerText: {

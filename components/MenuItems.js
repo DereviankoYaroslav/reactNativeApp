@@ -60,9 +60,9 @@ const Item = ({ name, price }) => {
   );
 }
 
-const MenuItems = () => {
+const MenuItems = ({navigation}) => {
 
-  const [showMenu, setShowMenu] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
 
   const renderItem = ({ item }) => {
     return (
@@ -91,6 +91,9 @@ const MenuItems = () => {
       renderSectionHeader={renderSectionHeader}
       keyExtractor={(item, index) => item+index}
     />  : null}
+      <Pressable onPress={() => navigation.navigate('Login')}>
+        <Text style={menuStyles.button}>Login Screen</Text>
+      </Pressable>
     </View>
   );
 };
@@ -128,4 +131,7 @@ const menuStyles = StyleSheet.create({
     flexWrap: 'wrap',
     textAlign: 'center',
   },
+  button: {
+    alignSelf: 'center'
+  }
 });
